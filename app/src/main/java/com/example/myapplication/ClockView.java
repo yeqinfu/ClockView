@@ -124,7 +124,7 @@ public class ClockView extends View {
         secondRadius = minuteRadius + radiusOffset + getTextLength(second);
         commonTextHeight = -getTextPaint().ascent() + getTextPaint().descent();
        // startAnimator();
-      //  setDateAndStart(null);
+        setDateAndStart(null);
     }
     public void setDateAndStart(Calendar calendar){
         if (calendar==null){
