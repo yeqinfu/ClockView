@@ -10,8 +10,18 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
+        BZWConfigs {
+            storeFile file("easypaykeystore.jks")
+            storePassword "easypay123"
+            keyAlias "easypaykeystore"
+            keyPassword "easypay123"
+        }
+    }
+
     buildTypes {
         release {
+            signingConfig signingConfigs.BZWConfigs
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
