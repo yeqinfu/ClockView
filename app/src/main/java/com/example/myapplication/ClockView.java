@@ -158,14 +158,12 @@ public class ClockView extends View {
         super.onDraw(canvas);
         // 将坐标系原点移动到画布正中心
         canvas.translate(mWidth / 2, mHeight / 2);
-
         /**画中心*/
         drawTextOnMiddle(canvas, year, 0, 0);
         /**画月份*/
         double initAngle = 0;
         canvas.save();
         canvas.rotate(monthRepeat * (360.0f / 12) + (float) monInitAngle);
-
         for (int i = 0; i < 12; i++) {
             Polar polar = new Polar(monthRadius, initAngle);
             drawTextToPointLeft(canvas, polar.toPoint(), CommonNumber.getMonths()[i], getTextPaint());
